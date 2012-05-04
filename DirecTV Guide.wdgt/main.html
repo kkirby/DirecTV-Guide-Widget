@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="main.css">
+	<script type="text/javascript" src="/System/Library/WidgetResources/AppleClasses/AppleInfoButton.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/System/Library/WidgetResources/AppleClasses/AppleAnimator.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/System/Library/WidgetResources/AppleClasses/AppleButton.js" charset="utf-8"></script>
+	<script type="text/javascript" src="framework/jquery.js" charset="utf-8"></script>
+	<script type="text/javascript" src="framework/jquery-ui.js" charset="utf-8"></script>
+	<script type="text/javascript" src="framework/knockout.js" charset="utf-8"></script>
+	<script type="text/javascript" src="framework/spin.js" charset="utf-8"></script>
+	<script type="text/javascript" src="models/Guide.js" charset="utf-8"></script>
+	<script type="text/javascript" src="models/GuideChannel.js" charset="utf-8"></script>
+	<script type="text/javascript" src="models/GuideChannelProgram.js" charset="utf-8"></script>
+	<script type="text/javascript" src="base.js" charset="utf-8"></script>
+</head>
+<body>
+	<div id="front">
+		<img id="front_image" src="Parts/Images/front.png">
+		<div id="logo">DirecTV Guide</div>
+		<div id="info_button"></div>
+		<div id="program_listing" data-bind="attr: {class: chosenChannel() && chosenChannel().programs().length > 0 ? 'show' : ''}">
+			<div data-bind="with: chosenChannel">
+				<h1 data-bind="text: channelName">Placeholder</h1>
+				<h2 data-bind="text: channelNumber">100</h2>
+				<img data-bind="attr: {src: channelLogo}" id="channel_image" src="" width="45" height="30">
+				<ul data-bind="foreach: programs" id="programs">
+					<li>
+						<a href="#" data-bind="click: openTinyUrl" target="_blank">
+							<img src="" data-bind="attr: {src: poster}" class="poster"/>
+						</a>
+						<div class="information">
+							<span data-bind="text: programTitle" class="program-title">Placeholder</span><br/>
+							<span data-bind="text: episodeTitle" class="episode-title">Placeholder</span><br/>
+							<span data-bind="text: airDateComputed" class="air-date">placeholder</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div id="back_button"></div>
+		</div>
+		<div id="search" data-bind="attr: {class: !chosenChannel() ? 'show' : ''}">
+			<input id="search_field" type="text" placeholder="Channel Name" value="">
+		</div>
+		<div id="spinner"></div>
+	</div>
+	<div id="back">
+		<img id="back_image" src="Parts/Images/back.png" alt="">
+		<div id="back_info">
+			<p>
+				Written and designed by Kyle Kirby of Optimal Connection.
+			</p>
+			<p>
+				All data is pulled directly from either my servers or DirecTV's servers.
+			</p>
+			<p>
+				<b>Technologies Used</b>
+				<ul>
+					<li>Knockout.js</li>
+					<li>jQuery</li>
+					<li>jQuery UI</li>
+					<li>spin.js</li>
+					<li>Apple Classes</li>
+				</ul>
+			</p>
+			<p>
+				<b>Special Thanks</b>
+				<ul>
+					<li>DirecTV &ndash; For providing a robust API that I could tap into.</li>
+					<li>Rachel Savatski &ndash; For being an amazing Fiancée and being a beta tester.</li>
+				</ul>
+			</p>
+		</div>
+		<div id="done_button"></div>
+	</div>
+</body>
+</html>

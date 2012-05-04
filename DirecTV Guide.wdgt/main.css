@@ -1,0 +1,234 @@
+
+
+body, h1, h2, h3, h4, ul, li, ol, p {
+    margin: 0px;
+	padding: 0px;
+}
+
+#front, #back {
+	width: 535px;
+	height: 361px;
+	position: relative;
+}
+
+#front front_image {
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: auto;
+    height: auto;
+}
+
+#front #logo {
+    font-family: HelveticaNeue;
+    position: absolute;
+    font-size: 52px;
+    color: white;
+    top: 15px;
+    left: 27px;
+    text-shadow: #535353 1px 1px 1px;
+}
+
+#front #info_button {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 13px;
+    height: 13px;
+}
+
+#search {
+	opacity: 0;
+	-webkit-transition: opacity .2s linear;
+}
+
+#search.show {
+	opacity: 1;
+	-webkit-transition: opacity .2s linear;
+}
+
+#search_field {
+	background: #F4F4F4;
+	border: solid 1px #C1C1C1;
+    position: absolute;
+    color: black;
+    font-family: HelveticaNeue;
+    border-radius: 21px;
+    font-size: 18pt;
+    left: 29px;
+    top: 97px;
+	font-size: 18pt;
+    outline: none;
+    padding-left: 9px;
+    width: 471px;
+}
+
+#program_listing {
+    font-family: HelveticaNeue;
+    color: white;
+	opacity: 0;
+	-webkit-transition: opacity .2s linear;
+}
+
+#program_listing.show {
+	opacity: 1;
+	-webkit-transition: opacity .2s linear;
+}
+
+#program_listing #channel_image {
+    position: absolute;
+	top: 98px;
+	left: 20px;
+	width: 45px;
+    height: 30px;
+}
+
+#program_listing h1 {
+    position: absolute;
+    top: 95px;
+    left: 70px;
+	width: 440px;
+	height: 41px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+#program_listing h2 {
+    position: absolute;
+    top: 17px;
+	right: 20px;
+	text-shadow: #535353 1px 1px 1px;
+}
+
+#program_listing #back_button {
+    position: absolute;
+    margin-top: 0px;
+    left: 20px;
+   	bottom: 20px;
+}
+
+
+#program_listing #programs {
+    position: absolute;
+    top: 145px;
+	left: 27px;
+    width: 480px;
+    list-style-type: none;
+}
+
+#program_listing #programs li {
+    margin-left: 0px;
+    width: 160px;
+    float: left;
+	text-align: center;
+}
+
+#program_listing #programs li .poster {
+	margin-bottom: 2px;
+	-webkit-box-reflect: below 1px -webkit-linear-gradient(transparent, transparent 80%,rgba(255,255,255,.7));
+}
+
+#program_listing #programs li .information {
+	position: relative;
+	font-size: 11px;
+	line-height: 15px;
+	text-shadow: #3E3E3E 1px 1px 1px;
+	z-index: 4;
+}
+
+/**
+ * Back
+ */
+
+#back {
+    display: none;
+}
+
+#back #back_image {
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: auto;
+    height: auto;
+}
+
+#back #back_info {
+	color: white;
+	font-family: HelveticaNeue;
+	font-size: 15px;
+	text-shadow: #3E3E3E 1px 1px 1px;
+	position: absolute;
+	top: 25px;
+	left: 30px;
+	width: 480px;
+	line-height: 20px;
+}
+
+#back #back_info p {
+	margin-bottom: 10px;
+}
+
+#back #back_info ul {
+	margin-left: 20px;
+}
+
+#back #done_button {
+    position: absolute;
+    right: 21px;
+    bottom: 21px;
+    margin-left: auto;
+    margin-top: auto;
+}
+
+
+
+/**
+ * Autocomplete
+ */
+.ui-autocomplete {
+    font-family: HelveticaNeue;
+    padding: 0px;
+    margin: 0px;
+    font-size: 17px;
+    width: 460px;
+    list-style-type: none;
+}
+
+
+.ui-autocomplete li a {
+	display: block;
+    padding: 5px 10px;
+	color: white;
+}
+
+.ui-autocomplete li:nth-child(1) a {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.ui-autocomplete li:nth-last-child(1) a {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.ui-autocomplete a.ui-state-hover {
+    background-color: #52769A !important;
+}
+
+/**
+ * Spinner
+ */
+#spinner {
+	position: absolute;
+	top: 60%;
+	margin-top: -10px;
+	left: 50%;
+	margin-left: -10px;
+}
